@@ -12,3 +12,7 @@ Route.put('passwords', 'ForgotPasswordController.update')
 
 Route.get('/files/:id', 'FileController.show')
 Route.post('/files', 'FileController.store')
+
+Route.resource('appointments', 'AppointmentController')
+  .middleware('auth')
+  .apiOnly()
